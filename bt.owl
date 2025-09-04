@@ -1,0 +1,917 @@
+@prefix bt: <http://example.org/bt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bt:CloseGripper a bt:Node ;
+    bt:description "Abstract action to close the gripper"^^xsd:string ;
+    bt:mapsTo [ a bt:Node ;
+            bt:type "GripperCommand" ;
+            bt:withParams [ bt:position 0e+00 ] ],
+        [ a bt:Node ;
+            bt:type "YaskawaGripperCommand" ;
+            bt:withParams [ bt:position 0e+00 ] ] .
+
+bt:GetCurrentIKFramePose a bt:Node ;
+    bt:description "Query the current PoseStamped of the specified IK-frame (default \"tool0\") for feedback control or as a starting point for relative planning."^^xsd:string ;
+    bt:hasPort bt:GetCurrentIKFramePose_error_code_id,
+        bt:GetCurrentIKFramePose_group_name,
+        bt:GetCurrentIKFramePose_ik_frame,
+        bt:GetCurrentIKFramePose_pose,
+        bt:GetCurrentIKFramePose_server_name,
+        bt:GetCurrentIKFramePose_server_timeout .
+
+bt:OpenGripper a bt:Node ;
+    bt:description "Abstract action to open the gripper"^^xsd:string ;
+    bt:mapsTo [ a bt:Node ;
+            bt:type "GripperCommand" ;
+            bt:withParams [ bt:position 1e+00 ] ],
+        [ a bt:Node ;
+            bt:type "YaskawaGripperCommand" ;
+            bt:withParams [ bt:position 1e+00 ] ] .
+
+bt:PrintROSMsg a bt:Node ;
+    bt:description "Print ROS messages (String, RobotTrajectory, PoseStamped, Pose) to console for debugging or introspection during task execution."^^xsd:string ;
+    bt:hasPort bt:PrintROSMsg_msg_pose,
+        bt:PrintROSMsg_msg_posestamped,
+        bt:PrintROSMsg_msg_string,
+        bt:PrintROSMsg_msg_trajectory .
+
+bt:SetPathConstraints a bt:Node ;
+    bt:controlFlowNext bt:ComputePathToPoint,
+        bt:ComputePathToPose,
+        bt:ComputePathToState ;
+    bt:description "Generate a Constraints message on-the-fly from a semicolon-separated list of joint limits (e.g. \"joint1:-1.57,1.57;joint2:-0.8,0.8\")."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:SetPathConstraints_joint_constraints,
+        bt:SetPathConstraints_path_constraints ;
+    bt:probability 1e+00 .
+
+bt:ValueType a owl:Class .
+
+bt:ColorPoseEstimation_color a bt:Port ;
+    bt:description "The target color"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "color"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:ColorPoseEstimation_color_pose_cube a bt:Port ;
+    bt:description "The PoseStamped of the target color cube"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:UpdatePose_base_posestamped ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "color_pose_cube"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ColorPoseEstimation_color_pose_cube_holder a bt:Port ;
+    bt:description "The PoseStamped of the color cube holder"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "color_pose_cube_holder"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ColorPoseEstimation_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ColorPoseEstimation_server_name a bt:Port ;
+    bt:defaultValue "color_pose_estimation"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ColorPoseEstimation_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:ColorPoseEstimation_sub_topic_name a bt:Port ;
+    bt:defaultValue "/color_pose_estimation/color_pose_array"^^xsd:string ;
+    bt:description "Topic publishing color pose array"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "sub_topic_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ColorPoseEstimation_timeout a bt:Port ;
+    bt:defaultValue "5000"^^xsd:string ;
+    bt:description "Maximum wait time for result in milliseconds"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Int16"^^xsd:string ;
+    bt:portName "timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:ComputePathToPoint a bt:Node ;
+    bt:controlFlowNext bt:ExecuteTrajectory ;
+    bt:description "Plan a Cartesian path from the current pose to a given 3-D point (x,y,z)—useful for approach or retreat motions in pick-and-place or surface inspection tasks."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:ComputePathToPoint_error_code_id,
+        bt:ComputePathToPoint_ik_frame,
+        bt:ComputePathToPoint_path_constraints,
+        bt:ComputePathToPoint_planner_id,
+        bt:ComputePathToPoint_planning_pipeline,
+        bt:ComputePathToPoint_server_name,
+        bt:ComputePathToPoint_server_timeout,
+        bt:ComputePathToPoint_target_group,
+        bt:ComputePathToPoint_target_point,
+        bt:ComputePathToPoint_trajectory ;
+    bt:probability 1e+00 .
+
+bt:ComputePathToPoint_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToPoint_ik_frame a bt:Port ;
+    bt:defaultValue "tool0"^^xsd:string ;
+    bt:description "the ik frame"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "ik_frame"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ComputePathToPoint_planner_id a bt:Port ;
+    bt:description "the name of planner id in the planning pipeline"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "planner_id"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToPoint_planning_pipeline a bt:Port ;
+    bt:description "the name of planning pipeline"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "planning_pipeline"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToPoint_server_name a bt:Port ;
+    bt:defaultValue "compute_path_to_point"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ComputePathToPoint_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:ComputePathToPoint_target_group a bt:Port ;
+    bt:description "The target move group"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "target_group"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:ComputePathToPoint_target_point a bt:Port ;
+    bt:description "The point that move group moves to"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.PointStamped"^^xsd:string ;
+    bt:portName "target_point"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:ComputePathToPoint_trajectory a bt:Port ;
+    bt:description "Generated trajectory"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:ExecuteTrajectory_trajectory ;
+    bt:hasValueType "builtIn.JointTrajectory"^^xsd:string ;
+    bt:portName "trajectory"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToPose_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToPose_ik_frame a bt:Port ;
+    bt:defaultValue "tool0"^^xsd:string ;
+    bt:description "The ik frame"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "ik_frame"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ComputePathToPose_planner_id a bt:Port ;
+    bt:description "The name of planner id in the planning pipeline"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "planner_id"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToPose_planning_pipeline a bt:Port ;
+    bt:description "The name of planning pipeline"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "planning_pipeline"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToPose_server_name a bt:Port ;
+    bt:defaultValue "compute_path_to_pose"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ComputePathToPose_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:ComputePathToPose_target_group a bt:Port ;
+    bt:description "The target move group"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "target_group"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:ComputePathToPose_trajectory a bt:Port ;
+    bt:description "Generated trajectory"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:ExecuteTrajectory_trajectory ;
+    bt:hasValueType "builtIn.JointTrajectory"^^xsd:string ;
+    bt:portName "trajectory"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToState_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToState_named_state a bt:Port ;
+    bt:description "The predefined named state of the move group"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "named_state"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToState_planner_id a bt:Port ;
+    bt:description "The name of planner id in the planning pipeline"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "planner_id"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToState_planning_pipeline a bt:Port ;
+    bt:description "The name of planning pipeline"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "planning_pipeline"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:ComputePathToState_server_name a bt:Port ;
+    bt:defaultValue "compute_path_to_state"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ComputePathToState_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:ComputePathToState_target_group a bt:Port ;
+    bt:description "The target move group"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "target_group"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:ComputePathToState_trajectory a bt:Port ;
+    bt:description "Generated trajectory"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:ExecuteTrajectory_trajectory ;
+    bt:hasValueType "builtIn.JointTrajectory"^^xsd:string ;
+    bt:portName "trajectory"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:CreatePose a bt:Node ;
+    bt:controlFlowNext bt:ComputePathToPose ;
+    bt:description "Construct a new PoseStamped message from individual position (x, y, z) and orientation (roll, pitch, yaw) components in the specified frame_id. Commonly used to define target waypoints or reference poses for planning and manipulation tasks when no prior perception-derived pose is available."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:CreatePose_frame_id,
+        bt:CreatePose_pitch,
+        bt:CreatePose_roll,
+        bt:CreatePose_target_posestamp,
+        bt:CreatePose_x,
+        bt:CreatePose_y,
+        bt:CreatePose_yaw,
+        bt:CreatePose_z ;
+    bt:probability 1e+00 .
+
+bt:CreatePose_frame_id a bt:Port ;
+    bt:description "frame id"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "frame_id"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:CreatePose_pitch a bt:Port ;
+    bt:description "The pitch value of the pose"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Float64"^^xsd:string ;
+    bt:portName "pitch"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:CreatePose_roll a bt:Port ;
+    bt:description "The roll value of the pose"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Float64"^^xsd:string ;
+    bt:portName "roll"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:CreatePose_target_posestamp a bt:Port ;
+    bt:description "The target posestamped"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:ComputePathToPose_target_pose ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "target_posestamp"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:CreatePose_x a bt:Port ;
+    bt:description "The x value of the pose"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Float64"^^xsd:string ;
+    bt:portName "x"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:CreatePose_y a bt:Port ;
+    bt:description "The y value of the pose"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Float64"^^xsd:string ;
+    bt:portName "y"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:CreatePose_yaw a bt:Port ;
+    bt:description "The yaw value of the pose"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Float64"^^xsd:string ;
+    bt:portName "yaw"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:CreatePose_z a bt:Port ;
+    bt:description "The z value of the pose"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Float64"^^xsd:string ;
+    bt:portName "z"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:DetectArucoMarker_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:DetectArucoMarker_marker_id a bt:Port ;
+    bt:description "The target marker ID"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Int16"^^xsd:string ;
+    bt:portName "marker_id"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:DetectArucoMarker_marker_pose a bt:Port ;
+    bt:description "The PoseStamped of the target marker"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:UpdatePose_base_posestamped ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "marker_pose"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:DetectArucoMarker_required_pose_num a bt:Port ;
+    bt:defaultValue "2"^^xsd:string ;
+    bt:description "Number of poses to average"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Int16"^^xsd:string ;
+    bt:portName "required_pose_num"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:DetectArucoMarker_server_name a bt:Port ;
+    bt:defaultValue "/perception_skill/detect_aruco_marker"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:DetectArucoMarker_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:DetectArucoMarker_sub_topic_name a bt:Port ;
+    bt:defaultValue "/marker_publisher/markers"^^xsd:string ;
+    bt:description "Topic publishing detected marker poses"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "sub_topic_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ExecuteTrajectory_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ExecuteTrajectory_server_name a bt:Port ;
+    bt:defaultValue "execute_trajectory"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:ExecuteTrajectory_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:ExecuteTrajectory_target_group a bt:Port ;
+    bt:description "The target move group"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "target_group"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:GetCurrentIKFramePose_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:GetCurrentIKFramePose_group_name a bt:Port ;
+    bt:description "The move group name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "group_name"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:GetCurrentIKFramePose_ik_frame a bt:Port ;
+    bt:defaultValue "tool0"^^xsd:string ;
+    bt:description "The target IK frame name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "ik_frame"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:GetCurrentIKFramePose_pose a bt:Port ;
+    bt:description "The pose of IK frame"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Pose"^^xsd:string ;
+    bt:portName "pose"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:GetCurrentIKFramePose_server_name a bt:Port ;
+    bt:defaultValue "get_current_ik_frame_pose"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:GetCurrentIKFramePose_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:GripperCommand a bt:Node ;
+    bt:controlFlowNext bt:ColorPoseEstimation,
+        bt:ComputePathToState,
+        bt:DetectArucoMarker,
+        bt:LegoPoseEstimator ;
+    bt:description "Send a FollowJointTrajectory goal to open or close the gripper to the desired position with an optional max_effort; typical pick-and-place grasp or release action."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:GripperCommand_error_code_id,
+        bt:GripperCommand_max_effort,
+        bt:GripperCommand_position,
+        bt:GripperCommand_server_name,
+        bt:GripperCommand_server_timeout ;
+    bt:probability 1e+00 .
+
+bt:GripperCommand_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:GripperCommand_max_effort a bt:Port ;
+    bt:description "Maximum force to apply"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Double"^^xsd:string ;
+    bt:portName "max_effort"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:GripperCommand_position a bt:Port ;
+    bt:description "Gripper open or close position"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Double"^^xsd:string ;
+    bt:portName "position"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:GripperCommand_server_name a bt:Port ;
+    bt:defaultValue "gripper_command_action_server"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:GripperCommand_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:LegoPoseEstimator_color a bt:Port ;
+    bt:description "The target color"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "color"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:LegoPoseEstimator_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:LegoPoseEstimator_lego_pose a bt:Port ;
+    bt:description "The PoseStamped of the target Lego piece"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:UpdatePose_base_posestamped ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "lego_pose"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:LegoPoseEstimator_server_name a bt:Port ;
+    bt:defaultValue "lego_pose_estimator"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:LegoPoseEstimator_server_timeout a bt:Port ;
+    bt:defaultValue "20000ms"^^xsd:string ;
+    bt:description "timeout"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:LegoPoseEstimator_sub_topic_name a bt:Port ;
+    bt:defaultValue "/lego_pose_estimator/lego_pose_array"^^xsd:string ;
+    bt:description "Topic publishing Lego pose array"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "sub_topic_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:LegoPoseEstimator_timeout a bt:Port ;
+    bt:defaultValue "1000"^^xsd:string ;
+    bt:description "Maximum wait time for result in milliseconds"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Int16"^^xsd:string ;
+    bt:portName "timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:PrintROSMsg_msg_pose a bt:Port ;
+    bt:description "Variable required to be printed in Pose type"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "msg_pose"^^xsd:string ;
+    bt:portName "msg_pose"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:PrintROSMsg_msg_posestamped a bt:Port ;
+    bt:description "Variable required to be printed in PoseStamped type"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "msg_posestamped"^^xsd:string ;
+    bt:portName "msg_posestamped"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:PrintROSMsg_msg_string a bt:Port ;
+    bt:description "Variable required to be printed in string type"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "msg_string"^^xsd:string ;
+    bt:portName "msg_string"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:PrintROSMsg_msg_trajectory a bt:Port ;
+    bt:description "Variable required to be printed in RobotTrajectory type"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "msg_trajectory"^^xsd:string ;
+    bt:portName "msg_trajectory"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:SetPathConstraints_joint_constraints a bt:Port ;
+    bt:description "Joint constraints, separated by ';'"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.JointConstraintArray"^^xsd:string ;
+    bt:portName "joint_constraints"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:SetPathConstraints_path_constraints a bt:Port ;
+    bt:description "path constraints"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:ComputePathToPoint_path_constraints,
+        bt:ComputePathToPose_path_constraints,
+        bt:ComputePathToState_path_constraints ;
+    bt:hasValueType "builtIn.PathConstraints"^^xsd:string ;
+    bt:portName "path_constraints"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:UpdateOrientationInPose a bt:Node ;
+    bt:controlFlowNext bt:ComputePathToPose ;
+    bt:description "Replace the orientation (Quaternion) of an input PoseStamped while preserving its position and header. Useful for enforcing a fixed end-effector attitude (e.g., tool pointing down) before IK or path planning, or for correcting perception-derived poses whose orientation is unreliable."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:UpdateOrientationInPose_base_posestamped,
+        bt:UpdateOrientationInPose_new_orientation,
+        bt:UpdateOrientationInPose_updated_posestamped ;
+    bt:probability 1e+00 .
+
+bt:UpdateOrientationInPose_new_orientation a bt:Port ;
+    bt:description "The replacement orientation (Quaternion)"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "new_orientation"^^xsd:string ;
+    bt:portName "new_orientation"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:UpdatePose_update_relative_pose a bt:Port ;
+    bt:description "The relative pose to apply"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Pose"^^xsd:string ;
+    bt:portName "update_relative_pose"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:YaskawaGripperCommand a bt:Node ;
+    bt:controlFlowNext bt:ColorPoseEstimation,
+        bt:ComputePathToState,
+        bt:DetectArucoMarker,
+        bt:LegoPoseEstimator ;
+    bt:description "Yaskawa-specific gripper command supporting position, tolerance and effort parameters; can be run in simulation (use_sim=true) or on hardware."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:YaskawaGripperCommand_error_code_id,
+        bt:YaskawaGripperCommand_max_effort,
+        bt:YaskawaGripperCommand_position,
+        bt:YaskawaGripperCommand_position_tolerance,
+        bt:YaskawaGripperCommand_server_name,
+        bt:YaskawaGripperCommand_server_timeout,
+        bt:YaskawaGripperCommand_use_sim ;
+    bt:probability 1e+00 .
+
+bt:YaskawaGripperCommand_error_code_id a bt:Port ;
+    bt:description "Action error code ID"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "error_code_id"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:YaskawaGripperCommand_max_effort a bt:Port ;
+    bt:description "Force applied by the gripper"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Double"^^xsd:string ;
+    bt:portName "max_effort"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:YaskawaGripperCommand_position a bt:Port ;
+    bt:description "Gripper open or close position"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Double"^^xsd:string ;
+    bt:portName "position"^^xsd:string ;
+    bt:portType "enum"^^xsd:string .
+
+bt:YaskawaGripperCommand_position_tolerance a bt:Port ;
+    bt:description "Allowed position tolerance"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Double"^^xsd:string ;
+    bt:portName "position_tolerance"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:YaskawaGripperCommand_server_name a bt:Port ;
+    bt:defaultValue "yaskawa_gripper_command"^^xsd:string ;
+    bt:description "action server name"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.String"^^xsd:string ;
+    bt:portName "server_name"^^xsd:string ;
+    bt:portType "default"^^xsd:string .
+
+bt:YaskawaGripperCommand_server_timeout a bt:Port ;
+    bt:defaultValue "1000"^^xsd:string ;
+    bt:description "Maximum wait time for result in milliseconds"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Milliseconds"^^xsd:string ;
+    bt:portName "server_timeout"^^xsd:string ;
+    bt:portType "num"^^xsd:string .
+
+bt:YaskawaGripperCommand_use_sim a bt:Port ;
+    bt:description "Whether to use simulation or real hardware"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.Bool"^^xsd:string ;
+    bt:portName "use_sim"^^xsd:string ;
+    bt:portType "given"^^xsd:string .
+
+bt:ColorPoseEstimation a bt:Node ;
+    bt:controlFlowNext bt:UpdatePose ;
+    bt:description "Detect objects of a specified colour (e.g. yellow cube) from the /color_pose_array topic and output their PoseStamped for downstream pick-and-place planning."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:ColorPoseEstimation_color,
+        bt:ColorPoseEstimation_color_pose_cube,
+        bt:ColorPoseEstimation_color_pose_cube_holder,
+        bt:ColorPoseEstimation_error_code_id,
+        bt:ColorPoseEstimation_server_name,
+        bt:ColorPoseEstimation_server_timeout,
+        bt:ColorPoseEstimation_sub_topic_name,
+        bt:ColorPoseEstimation_timeout ;
+    bt:probability 1e+00 .
+
+bt:ComputePathToPoint_path_constraints a bt:Port ;
+    bt:description "path constraints"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.PathConstraints"^^xsd:string ;
+    bt:portName "path_constraints"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToPose_path_constraints a bt:Port ;
+    bt:description "path constraints"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.PathConstraints"^^xsd:string ;
+    bt:portName "path_constraints"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToState_path_constraints a bt:Port ;
+    bt:description "path constraints"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.PathConstraints"^^xsd:string ;
+    bt:portName "path_constraints"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:DetectArucoMarker a bt:Node ;
+    bt:controlFlowNext bt:UpdatePose ;
+    bt:description "Detect an ArUco marker by ID, average multiple detections, and output its PoseStamped for use in robot localization or calibration tasks."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:DetectArucoMarker_error_code_id,
+        bt:DetectArucoMarker_marker_id,
+        bt:DetectArucoMarker_marker_pose,
+        bt:DetectArucoMarker_required_pose_num,
+        bt:DetectArucoMarker_server_name,
+        bt:DetectArucoMarker_server_timeout,
+        bt:DetectArucoMarker_sub_topic_name ;
+    bt:probability 1e+00 .
+
+bt:LegoPoseEstimator a bt:Node ;
+    bt:controlFlowNext bt:UpdatePose ;
+    bt:description "Estimate the PoseStamped of Lego bricks of the given colour published on /lego_pose_array—often used as the perception step before pick or assembly."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:LegoPoseEstimator_color,
+        bt:LegoPoseEstimator_error_code_id,
+        bt:LegoPoseEstimator_lego_pose,
+        bt:LegoPoseEstimator_server_name,
+        bt:LegoPoseEstimator_server_timeout,
+        bt:LegoPoseEstimator_sub_topic_name,
+        bt:LegoPoseEstimator_timeout ;
+    bt:probability 1e+00 .
+
+bt:UpdateOrientationInPose_base_posestamped a bt:Port ;
+    bt:description "The PoseStamped that will be manipulated"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:flowsTo bt:UpdateOrientationInPose_updated_posestamped ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "base_posestamped"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:UpdateOrientationInPose_updated_posestamped a bt:Port ;
+    bt:description "The PoseStamped with the new orientation"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:ComputePathToPose_target_pose ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "updated_posestamped"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:UpdatePose_updated_posestamped a bt:Port ;
+    bt:description "The updated PoseStamped"^^xsd:string ;
+    bt:direction "out"^^xsd:string ;
+    bt:flowsTo bt:UpdateOrientationInPose_base_posestamped ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "updated_posestamped"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToPose a bt:Node ;
+    bt:controlFlowNext bt:ExecuteTrajectory ;
+    bt:description "Plan a motion path that brings the TCP/IK-frame to a target PoseStamped (e.g. pose of the yellow cube) using the selected planning pipeline and planner_id. Supports Cartesian or joint-space planning and optional path constraints."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:ComputePathToPose_error_code_id,
+        bt:ComputePathToPose_ik_frame,
+        bt:ComputePathToPose_path_constraints,
+        bt:ComputePathToPose_planner_id,
+        bt:ComputePathToPose_planning_pipeline,
+        bt:ComputePathToPose_server_name,
+        bt:ComputePathToPose_server_timeout,
+        bt:ComputePathToPose_target_group,
+        bt:ComputePathToPose_target_pose,
+        bt:ComputePathToPose_trajectory ;
+    bt:probability 1e+00 .
+
+bt:ComputePathToPose_target_pose a bt:Port ;
+    bt:description "The stamped pose that move group moves to"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "target_pose"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:ComputePathToState a bt:Node ;
+    bt:controlFlowNext bt:ExecuteTrajectory ;
+    bt:description "Plan a collision-free trajectory that moves the arm from its current pose to a predefined named_state (e.g. “pre-grasp”, “place_home”) while honouring optional path constraints. Typically used in pick-and-place pipelines before grasp or after placing the object."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:ComputePathToState_error_code_id,
+        bt:ComputePathToState_named_state,
+        bt:ComputePathToState_path_constraints,
+        bt:ComputePathToState_planner_id,
+        bt:ComputePathToState_planning_pipeline,
+        bt:ComputePathToState_server_name,
+        bt:ComputePathToState_server_timeout,
+        bt:ComputePathToState_target_group,
+        bt:ComputePathToState_trajectory ;
+    bt:probability 1e+00 .
+
+bt:ExecuteTrajectory a bt:Node ;
+    bt:controlFlowNext bt:CreatePose,
+        bt:GripperCommand,
+        bt:YaskawaGripperCommand ;
+    bt:description "Send the pre-computed RobotTrajectory to the controller and wait until execution finishes or times out. Commonly follows a ComputePath* action in pick-and-place sequences."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:ExecuteTrajectory_error_code_id,
+        bt:ExecuteTrajectory_server_name,
+        bt:ExecuteTrajectory_server_timeout,
+        bt:ExecuteTrajectory_target_group,
+        bt:ExecuteTrajectory_trajectory ;
+    bt:probability 1e+00 .
+
+bt:UpdatePose a bt:Node ;
+    bt:controlFlowNext bt:UpdateOrientationInPose ;
+    bt:description "Apply a relative transform to an input PoseStamped and output the updated pose; useful for placing offsets or approach way-points."^^xsd:string ;
+    bt:fault_rate 1e-02 ;
+    bt:hasPort bt:UpdatePose_base_posestamped,
+        bt:UpdatePose_update_relative_pose,
+        bt:UpdatePose_updated_posestamped ;
+    bt:probability 1e+00 .
+
+bt:ExecuteTrajectory_trajectory a bt:Port ;
+    bt:description "Trajectory that will be executed by the target group"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:hasValueType "builtIn.JointTrajectory"^^xsd:string ;
+    bt:portName "trajectory"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:UpdatePose_base_posestamped a bt:Port ;
+    bt:description "The PoseStamped that will be manipulated"^^xsd:string ;
+    bt:direction "in"^^xsd:string ;
+    bt:flowsTo bt:UpdatePose_updated_posestamped ;
+    bt:hasValueType "builtIn.PoseStamped"^^xsd:string ;
+    bt:portName "base_posestamped"^^xsd:string ;
+    bt:portType "bbvar"^^xsd:string .
+
+bt:Node a owl:Class .
+
+bt:Port a owl:Class .
+
