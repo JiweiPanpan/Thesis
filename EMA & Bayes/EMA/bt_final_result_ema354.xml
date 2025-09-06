@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence>
+      <SubTree ID="SubTree1" _autoremap="true" />
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="SubTree1">
+    <Sequence>
+      <ComputePathToState
+        target_group="gp7_arm"
+        server_name="compute_path_to_state"
+        server_timeout="20000ms"
+        named_state="gp7_detect_arucomarker"
+        planning_pipeline="ompl"
+        planner_id="BKPIECEkConfigDefault"
+        path_constraints="{default}"
+        trajectory="{trajectory1}"
+        error_code_id="{error_code_id}" />
+      <ExecuteTrajectory
+        target_group="gp7_arm"
+        server_name="execute_trajectory"
+        server_timeout="20000ms"
+        trajectory="{trajectory1}"
+        error_code_id="{error_code_id}" />
+      <YaskawaGripperCommand
+        position="0.0"
+        position_tolerance="2.0"
+        max_effort="2.7"
+        use_sim="true"
+        server_timeout="20000ms"
+        server_name="yaskawa_gripper_command"
+        error_code_id="{error_code_id}" />
+      <DetectArucoMarker
+        marker_id="42"
+        server_name="/perception_skill/detect_aruco_marker"
+        server_timeout="20000ms"
+        sub_topic_name="/marker_publisher/markers"
+        required_pose_num="2"
+        marker_pose="{marker_pose1}"
+        error_code_id="{error_code_id}" />
+      <UpdatePose
+        base_posestamped="{marker_pose1}"
+        update_relative_pose="0.0;0.0;0.14;0.0;0.0;0.0;0.0"
+        updated_posestamped="{updated_posestamped1}" />
+      <UpdateOrientationInPose
+        base_posestamped="{updated_posestamped1}"
+        new_orientation="0.0;1.0;0.0;0.0"
+        updated_posestamped="{updated_posestamped2}" />
+      <SetPathConstraints
+        joint_constraints="joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0"
+        path_constraints="{path_constraints1}" />
+      <ComputePathToPose
+        target_group="gp7_arm"
+        server_name="compute_path_to_pose"
+        server_timeout="20000ms"
+        target_pose="{updated_posestamped2}"
+        planning_pipeline="pilz_industrial_motion_planner"
+        planner_id="PTP"
+        ik_frame="gp7_tool0"
+        path_constraints="{path_constraints1}"
+        trajectory="{trajectory2}"
+        error_code_id="{error_code_id}" />
+      <ExecuteTrajectory
+        target_group="gp7_arm"
+        server_name="execute_trajectory"
+        server_timeout="20000ms"
+        trajectory="{trajectory2}"
+        error_code_id="{error_code_id}" />
+      <YaskawaGripperCommand
+        position="0.365"
+        position_tolerance="2.0"
+        max_effort="2.7"
+        use_sim="true"
+        server_timeout="20000ms"
+        server_name="yaskawa_gripper_command"
+        error_code_id="{error_code_id}" />
+      <ComputePathToState
+        target_group="gp7_arm"
+        server_name="compute_path_to_state"
+        server_timeout="20000ms"
+        named_state="gp7_detect_arucomarker"
+        planning_pipeline="ompl"
+        planner_id="RRTConnectkConfigDefault"
+        path_constraints="{default}"
+        trajectory="{trajectory3}"
+        error_code_id="{error_code_id}" />
+      <ExecuteTrajectory
+        target_group="gp7_arm"
+        server_name="execute_trajectory"
+        server_timeout="20000ms"
+        trajectory="{trajectory3}"
+        error_code_id="{error_code_id}" />
+      <CreatePose
+        x="0.6"
+        y="1.7"
+        z="1.3"
+        roll="0.0"
+        pitch="3.1416"
+        yaw="0.0"
+        frame_id="world"
+        target_posestamp="{target_posestamp1}" />
+      <SetPathConstraints
+        joint_constraints="joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0"
+        path_constraints="{path_constraints2}" />
+      <ComputePathToPose
+        target_group="gp7_arm"
+        server_name="compute_path_to_pose"
+        server_timeout="20000ms"
+        target_pose="{target_posestamp1}"
+        planning_pipeline="pilz_industrial_motion_planner"
+        planner_id="PTP"
+        ik_frame="gp7_tool0"
+        path_constraints="{path_constraints2}"
+        trajectory="{trajectory4}"
+        error_code_id="{error_code_id}" />
+      <ExecuteTrajectory
+        target_group="gp7_arm"
+        server_name="execute_trajectory"
+        server_timeout="20000ms"
+        trajectory="{trajectory4}"
+        error_code_id="{error_code_id}" />
+      <YaskawaGripperCommand
+        position="0.0"
+        position_tolerance="2.0"
+        max_effort="2.7"
+        use_sim="true"
+        server_timeout="20000ms"
+        server_name="yaskawa_gripper_command"
+        error_code_id="{error_code_id}" />
+    </Sequence>
+  </BehaviorTree>
+</root>
