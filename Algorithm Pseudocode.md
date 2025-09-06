@@ -21,10 +21,11 @@ Output: Verified BT skeleton
 14:        for each error in feedback do
 15:            cands_error ← RAG_Retrieve(error.node, Skill_DataStore, Top=k)
 16:            candidates[error.node] ← cands_error
-17:        task ← Update_Task(task, candidates, feedback)
+17:        nodes ← LLM_Repair(nodes, candidates, feedback)
 18: until feedback == OK
 19: 
 20: return BT_Skeleton(nodes)
+
 
 
 
