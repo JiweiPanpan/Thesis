@@ -1,33 +1,31 @@
 
 
 **Algorithm 1: BT Skeleton Generation and Consistency Validation**
-
 ```
 Input:  Natural language task description, Skill DataStore (RAG), Examples
 Output: Verified BT skeleton
 
-repeat
-    1: nodes ← LLM_Decompose(task, Examples)
-    
-    # ----- First RAG: Existence Check -----
-    2: for each node in nodes do
-    3:     cand, score ← RAG_Retrieve(node, Skill_DataStore, Top=1)
-    4:     if score < θ then
-    5:         node ← cand
+1: repeat
+2:     nodes ← LLM_Decompose(task, Examples)
+3:     
+4:     for each node in nodes do
+5:         cand, score ← RAG_Retrieve(node, Skill_DataStore, Top=1)
+6:         if score < θ then
+7:             node ← cand
+8:     
+9:     CFG, DFG ← Build_Graphs(nodes, Ontology)
+10:    feedback ← Validate(CFG, DFG)
+11:    
+12:    if feedback == NOK then
+13:        candidates ← {}
+14:        for each error in feedback do
+15:            cands_error ← RAG_Retrieve(error.node, Skill_DataStore, Top=k)
+16:            candidates[error.node] ← cands_error
+17:        task ← Update_Task(task, candidates, feedback)
+18: until feedback == OK
+19: 
+20: return BT_Skeleton(nodes)
 
-    # ----- Dual-graph Validation -----
-    6: CFG, DFG ← Build_Graphs(nodes, Ontology)
-    7: feedback ← Validate(CFG, DFG)
-    8: if feedback == NOK then
-    9:     candidates ← {}
-    10:    for each error in feedback do
-    11:        cands_error ← RAG_Retrieve(error.node, Skill_DataStore, Top=k) 
-    12:        candidates[error.node] ← cands_error
-    13:    task ← Update_Task(task, candidates, feedback)
-
-until feedback == OK
-
-return BT_Skeleton(nodes)
 
 
 ```
