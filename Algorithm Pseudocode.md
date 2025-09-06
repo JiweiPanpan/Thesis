@@ -7,7 +7,7 @@ Input: Natural language task description, Skill Manifest, Examples
 Output: Verified BT skeleton
 
 1: nodes ← LLM_Decompose(task, Skill_Manifest, examples)
-2: nodes ← RAG_Existence_Check(nodes, Skill_Database)
+2: nodes ← RAG_Existence_Check(nodes, Skill_DataStore)
 3: repeat
 4:     CFG, DFG ← Build_Graphs(nodes, Ontology)
 5:     if Validate(CFG, DFG) == OK then
@@ -16,7 +16,7 @@ Output: Verified BT skeleton
 8:         feedback ← Extract_Feedback(CFG, DFG, nodes)      
 9:         candidates ← {}
 10:        for each error in feedback do
-11:            cands_error ← RAG_Retrieve(error.node, Skill_DataBase) 
+11:            cands_error ← RAG_Retrieve(error.node, Skill_DataStore) 
 12:            candidates[error.node] ← cands_error
 13:        nodes ← LLM_Repair(nodes, candidates, feedback)     
 14: until Validate(CFG, DFG) == OK
