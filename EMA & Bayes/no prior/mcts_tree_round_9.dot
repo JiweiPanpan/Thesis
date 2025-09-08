@@ -1,0 +1,371 @@
+digraph MCTS {
+  node [shape=box, style=rounded];
+  0 [label="ROOT
+N=300, Q=0.890"];
+  1 [label="ComputePathToState#1.ComputePathToState.named_state=gp7_detect_arucomarker
+N=300, Q=0.890"];
+  2 [label="ComputePathToState#1.ComputePathToState.planning_pipeline=ompl
+N=282, Q=0.890"];
+  3 [label="ComputePathToState#1.ComputePathToState.planner_id=BKPIECEkConfigDefault
+N=262, Q=0.897"];
+  4 [label="YaskawaGripperCommand#1.YaskawaGripperCommand.position=0.0
+N=261, Q=0.897"];
+  5 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.115;0.0;0.0;0.0;0.0
+N=184, Q=0.900"];
+  6 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=169, Q=0.905"];
+  7 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=166, Q=0.907"];
+  8 [label="ComputePathToPose#1.ComputePathToPose.planner_id=PTP
+N=165, Q=0.907"];
+  9 [label="YaskawaGripperCommand#2.YaskawaGripperCommand.position=0.365
+N=164, Q=0.907"];
+  10 [label="ComputePathToState#2.ComputePathToState.named_state=gp7_detect_arucomarker
+N=163, Q=0.907"];
+  11 [label="ComputePathToState#2.ComputePathToState.planning_pipeline=pilz_industrial_motion_planner
+N=158, Q=0.907"];
+  12 [label="ComputePathToState#2.ComputePathToState.planner_id=PTP
+N=157, Q=0.907"];
+  13 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=145, Q=0.908"];
+  14 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=141, Q=0.910"];
+  15 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=140, Q=0.910"];
+  16 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=139, Q=0.910"];
+  17 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=ompl
+N=3, Q=0.794"];
+  18 [label="ComputePathToPose#2.ComputePathToPose.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.747"];
+  19 [label="ComputePathToPose#2.ComputePathToPose.planner_id=TRRTkConfigDefault
+N=1, Q=0.887"];
+  20 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0
+N=5, Q=0.884"];
+  21 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=3, Q=0.910"];
+  22 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=2, Q=0.910"];
+  23 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=1, Q=0.910"];
+  24 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=ompl
+N=1, Q=0.777"];
+  25 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0
+N=1, Q=0.910"];
+  26 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.907"];
+  27 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.908"];
+  28 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.911"];
+  29 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.910"];
+  30 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.912"];
+  31 [label="ComputePathToState#2.ComputePathToState.planning_pipeline=ompl
+N=4, Q=0.895"];
+  32 [label="ComputePathToState#2.ComputePathToState.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.910"];
+  33 [label="ComputePathToState#2.ComputePathToState.planner_id=RRTkConfigDefault
+N=1, Q=0.848"];
+  34 [label="ComputePathToState#2.ComputePathToState.planner_id=RRTConnectkConfigDefault
+N=1, Q=0.909"];
+  35 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=ompl
+N=2, Q=0.739"];
+  36 [label="ComputePathToPose#1.ComputePathToPose.planner_id=BKPIECEkConfigDefault
+N=1, Q=0.739"];
+  37 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=6, Q=0.907"];
+  38 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=4, Q=0.909"];
+  39 [label="ComputePathToPose#1.ComputePathToPose.planner_id=PTP
+N=3, Q=0.909"];
+  40 [label="YaskawaGripperCommand#2.YaskawaGripperCommand.position=0.365
+N=2, Q=0.909"];
+  41 [label="ComputePathToState#2.ComputePathToState.named_state=gp7_detect_arucomarker
+N=1, Q=0.909"];
+  42 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=ompl
+N=1, Q=0.897"];
+  43 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0
+N=3, Q=0.606"];
+  44 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=1, Q=0.909"];
+  45 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=ompl
+N=1, Q=0.000"];
+  46 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.911"];
+  47 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0
+N=1, Q=0.906"];
+  48 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.911"];
+  49 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.905"];
+  50 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.910"];
+  51 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.14;0.0;0.0;0.0;0.0
+N=72, Q=0.894"];
+  52 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=62, Q=0.909"];
+  53 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=60, Q=0.911"];
+  54 [label="ComputePathToPose#1.ComputePathToPose.planner_id=PTP
+N=59, Q=0.911"];
+  55 [label="YaskawaGripperCommand#2.YaskawaGripperCommand.position=0.365
+N=58, Q=0.911"];
+  56 [label="ComputePathToState#2.ComputePathToState.named_state=gp7_detect_arucomarker
+N=57, Q=0.911"];
+  57 [label="ComputePathToState#2.ComputePathToState.planning_pipeline=pilz_industrial_motion_planner
+N=55, Q=0.913"];
+  58 [label="ComputePathToState#2.ComputePathToState.planner_id=PTP
+N=54, Q=0.913"];
+  59 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=45, Q=0.914"];
+  60 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=43, Q=0.918"];
+  61 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=42, Q=0.918"];
+  62 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=41, Q=0.918"];
+  63 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=ompl
+N=1, Q=0.739"];
+  64 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0
+N=2, Q=0.915"];
+  65 [label="ComputePathToPose#2.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=1, Q=0.915"];
+  66 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0
+N=1, Q=0.917"];
+  67 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.892"];
+  68 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.854"];
+  69 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.913"];
+  70 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.918"];
+  71 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.918"];
+  72 [label="ComputePathToState#2.ComputePathToState.planning_pipeline=ompl
+N=1, Q=0.791"];
+  73 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=ompl
+N=1, Q=0.756"];
+  74 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=3, Q=0.712"];
+  75 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=pilz_industrial_motion_planner
+N=1, Q=0.918"];
+  76 [label="ComputePathToPose#1.ComputePathToPose.planning_pipeline=ompl
+N=1, Q=0.300"];
+  77 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.915"];
+  78 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.428"];
+  79 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0
+N=1, Q=0.919"];
+  80 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.914"];
+  81 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.917"];
+  82 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.917"];
+  83 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.125;0.0;0.0;0.0;0.0
+N=1, Q=0.425"];
+  84 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.15;0.0;0.0;0.0;0.0
+N=1, Q=0.922"];
+  85 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.12;0.0;0.0;0.0;0.0
+N=1, Q=0.909"];
+  86 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.13;0.0;0.0;0.0;0.0
+N=1, Q=0.915"];
+  87 [label="ComputePathToState#1.ComputePathToState.planner_id=PRMstarkConfigDefault
+N=10, Q=0.920"];
+  88 [label="YaskawaGripperCommand#1.YaskawaGripperCommand.position=0.0
+N=9, Q=0.922"];
+  89 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.115;0.0;0.0;0.0;0.0
+N=3, Q=0.909"];
+  90 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=1, Q=0.908"];
+  91 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.909"];
+  92 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.14;0.0;0.0;0.0;0.0
+N=1, Q=0.918"];
+  93 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.125;0.0;0.0;0.0;0.0
+N=1, Q=0.915"];
+  94 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.15;0.0;0.0;0.0;0.0
+N=1, Q=0.922"];
+  95 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.12;0.0;0.0;0.0;0.0
+N=1, Q=0.987"];
+  96 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.13;0.0;0.0;0.0;0.0
+N=1, Q=0.917"];
+  97 [label="ComputePathToState#1.ComputePathToState.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.909"];
+  98 [label="ComputePathToState#1.ComputePathToState.planner_id=RRTConnectkConfigDefault
+N=1, Q=0.912"];
+  99 [label="ComputePathToState#1.ComputePathToState.planner_id=TRRTkConfigDefault
+N=1, Q=0.910"];
+  100 [label="ComputePathToState#1.ComputePathToState.planner_id=SBLkConfigDefault
+N=1, Q=0.987"];
+  101 [label="ComputePathToState#1.ComputePathToState.planner_id=PRMkConfigDefault
+N=1, Q=0.910"];
+  102 [label="ComputePathToState#1.ComputePathToState.planner_id=RRTkConfigDefault
+N=1, Q=0.910"];
+  103 [label="ComputePathToState#1.ComputePathToState.planner_id=ESTkConfigDefault
+N=1, Q=0.421"];
+  104 [label="ComputePathToState#1.ComputePathToState.planner_id=KPIECEkConfigDefault
+N=1, Q=0.000"];
+  105 [label="ComputePathToState#1.ComputePathToState.planner_id=RRTstarkConfigDefault
+N=1, Q=0.000"];
+  106 [label="ComputePathToState#1.ComputePathToState.planning_pipeline=pilz_industrial_motion_planner
+N=17, Q=0.891"];
+  107 [label="ComputePathToState#1.ComputePathToState.planner_id=PTP
+N=16, Q=0.888"];
+  108 [label="YaskawaGripperCommand#1.YaskawaGripperCommand.position=0.0
+N=15, Q=0.884"];
+  109 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.115;0.0;0.0;0.0;0.0
+N=7, Q=0.850"];
+  110 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=1, Q=0.948"];
+  111 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.911"];
+  112 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.906"];
+  113 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.906"];
+  114 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0
+N=1, Q=0.911"];
+  115 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0
+N=1, Q=0.422"];
+  116 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.14;0.0;0.0;0.0;0.0
+N=3, Q=0.920"];
+  117 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=1, Q=0.919"];
+  118 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3_s,0.0,0.1,0.1,1.0
+N=1, Q=0.921"];
+  119 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.125;0.0;0.0;0.0;0.0
+N=1, Q=0.915"];
+  120 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.15;0.0;0.0;0.0;0.0
+N=1, Q=0.886"];
+  121 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.12;0.0;0.0;0.0;0.0
+N=1, Q=0.909"];
+  122 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.13;0.0;0.0;0.0;0.0
+N=1, Q=0.886"];
+  0 -> 1;
+  1 -> 2;
+  2 -> 3;
+  3 -> 4;
+  4 -> 5;
+  5 -> 6;
+  6 -> 7;
+  7 -> 8;
+  8 -> 9;
+  9 -> 10;
+  10 -> 11;
+  11 -> 12;
+  12 -> 13;
+  13 -> 14;
+  14 -> 15;
+  15 -> 16;
+  13 -> 17;
+  17 -> 18;
+  17 -> 19;
+  12 -> 20;
+  20 -> 21;
+  21 -> 22;
+  22 -> 23;
+  20 -> 24;
+  12 -> 25;
+  12 -> 26;
+  12 -> 27;
+  12 -> 28;
+  12 -> 29;
+  12 -> 30;
+  10 -> 31;
+  31 -> 32;
+  31 -> 33;
+  31 -> 34;
+  6 -> 35;
+  35 -> 36;
+  5 -> 37;
+  37 -> 38;
+  38 -> 39;
+  39 -> 40;
+  40 -> 41;
+  37 -> 42;
+  5 -> 43;
+  43 -> 44;
+  43 -> 45;
+  5 -> 46;
+  5 -> 47;
+  5 -> 48;
+  5 -> 49;
+  5 -> 50;
+  4 -> 51;
+  51 -> 52;
+  52 -> 53;
+  53 -> 54;
+  54 -> 55;
+  55 -> 56;
+  56 -> 57;
+  57 -> 58;
+  58 -> 59;
+  59 -> 60;
+  60 -> 61;
+  61 -> 62;
+  59 -> 63;
+  58 -> 64;
+  64 -> 65;
+  58 -> 66;
+  58 -> 67;
+  58 -> 68;
+  58 -> 69;
+  58 -> 70;
+  58 -> 71;
+  56 -> 72;
+  52 -> 73;
+  51 -> 74;
+  74 -> 75;
+  74 -> 76;
+  51 -> 77;
+  51 -> 78;
+  51 -> 79;
+  51 -> 80;
+  51 -> 81;
+  51 -> 82;
+  4 -> 83;
+  4 -> 84;
+  4 -> 85;
+  4 -> 86;
+  2 -> 87;
+  87 -> 88;
+  88 -> 89;
+  89 -> 90;
+  89 -> 91;
+  88 -> 92;
+  88 -> 93;
+  88 -> 94;
+  88 -> 95;
+  88 -> 96;
+  2 -> 97;
+  2 -> 98;
+  2 -> 99;
+  2 -> 100;
+  2 -> 101;
+  2 -> 102;
+  2 -> 103;
+  2 -> 104;
+  2 -> 105;
+  1 -> 106;
+  106 -> 107;
+  107 -> 108;
+  108 -> 109;
+  109 -> 110;
+  109 -> 111;
+  109 -> 112;
+  109 -> 113;
+  109 -> 114;
+  109 -> 115;
+  108 -> 116;
+  116 -> 117;
+  116 -> 118;
+  108 -> 119;
+  108 -> 120;
+  108 -> 121;
+  108 -> 122;
+}
