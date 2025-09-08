@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="yellow_cube">
+    <static>false</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+
+      <!-- 惯性参数 -->
+      <inertial>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>4.17e-5</ixx>
+          <iyy>4.17e-5</iyy>
+          <izz>4.17e-5</izz>
+        </inertia>
+      </inertial>
+
+      <!-- 碰撞检测 -->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.063 0.095 0.115</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <mu>0.05</mu>
+              <mu2>0.05</mu2>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.05</mu>
+              <mu2>0.05</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <!-- 主立方体视觉 -->
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.063 0.095 0.115</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 1 0 1</ambient>
+          <diffuse>1 1 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+
+      <!-- ArUco 标记贴纸 - 顶部 (+Z方向) -->
+      <visual name="aruco_sticker_top">
+        <pose>0 0 0.058 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.05 0.05</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.9 0.9 0.9 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+          <pbr>
+            <metal>
+              <albedo_map>
+                file:///home/jiwei/.ignition/fuel/cube/materials/textures/aruco_marker_id42.png</albedo_map>
+              <metalness>0.0</metalness>
+              <roughness>0.9</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+
+    </link>
+
+    <!-- 插件：用于获取模型状态 -->
+    <plugin filename="libignition-gazebo-pose-publisher-system.so"
+      name="ignition::gazebo::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <static_publisher>true</static_publisher>
+      <static_update_frequency>1</static_update_frequency>
+    </plugin>
+
+  </model>
+</sdf>
