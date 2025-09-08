@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import math
 
-LOG_FILE = "/home/jiwei/Desktop/BT_dualgraph/priors_log.csv"
+LOG_FILE = "/home/jiwei/Desktop/Thesis/EMA & Bayes/EMA/priors_log_ema.csv"
 plt.style.use("seaborn-v0_8")
 
 # -------- Configuration --------
