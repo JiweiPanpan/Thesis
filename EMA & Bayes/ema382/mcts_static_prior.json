@@ -1,0 +1,394 @@
+{
+  "('ComputePathToState#1', 'ComputePathToState', 'named_state')": [
+    {
+      "value": "gp7_detect",
+      "prior": 0.3125
+    },
+    {
+      "value": "gp7_home",
+      "prior": 0.125
+    },
+    {
+      "value": "gp7_detect_arucomarker",
+      "prior": 0.5625
+    }
+  ],
+  "('ComputePathToState#1', 'ComputePathToState', 'planning_pipeline')": [
+    {
+      "value": "pilz_industrial_motion_planner",
+      "prior": 0.16250268825080844
+    },
+    {
+      "value": "ompl",
+      "prior": 0.8374973117491916
+    }
+  ],
+  "('ComputePathToState#1', 'ComputePathToState', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.00158770215581232
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 0.0025787588633842005
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.0013386645895940093
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 0.0022679139692305616
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 0.0020648780463719367
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.0018977731967947794
+    },
+    {
+      "value": "PTP",
+      "prior": 0.14742053403407668
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.0011912818530769103
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.8352406561058316
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 0.0017328686114038835
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 0.001453915990871957
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 0.0012250525835509902
+    }
+  ],
+  "('YaskawaGripperCommand#1', 'YaskawaGripperCommand', 'position')": [
+    {
+      "value": "0.0",
+      "prior": 0.7
+    },
+    {
+      "value": "0.235",
+      "prior": 0.3
+    }
+  ],
+  "('UpdatePose#1', 'UpdatePose', 'update_relative_pose')": [
+    {
+      "value": "0.0;0.0;0.115;0.0;0.0;0.0;0.0",
+      "prior": 0.014714624432840252
+    },
+    {
+      "value": "0.0;0.0;0.125;0.0;0.0;0.0;0.0",
+      "prior": 0.013625611333671952
+    },
+    {
+      "value": "0.0;0.0;0.12;0.0;0.0;0.0;0.0",
+      "prior": 0.011809165553048525
+    },
+    {
+      "value": "0.0;0.0;0.11;0.0;0.0;0.0;0.0",
+      "prior": 0.8569698519263045
+    },
+    {
+      "value": "0.0;0.0;0.105;0.0;0.0;0.0;0.0",
+      "prior": 0.012421452975192832
+    },
+    {
+      "value": "0.0;0.0;0.10;0.0;0.0;0.0;0.0",
+      "prior": 0.09045929377894178
+    }
+  ],
+  "('SetPathConstraints#1', 'SetPathConstraints', 'joint_constraints')": [
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0",
+      "prior": 0.008720569506198324
+    },
+    {
+      "value": "joint_3_s,0.0,0.1,0.1,1.0",
+      "prior": 0.009354128389310054
+    },
+    {
+      "value": "joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.010931690450348124
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0",
+      "prior": 0.010094271629493019
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.012478195085160942
+    },
+    {
+      "value": "joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.012893868430810104
+    },
+    {
+      "value": "joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0",
+      "prior": 0.008084730922291589
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.927442545586388
+    }
+  ],
+  "('ComputePathToPose#1', 'ComputePathToPose', 'planning_pipeline')": [
+    {
+      "value": "pilz_industrial_motion_planner",
+      "prior": 0.9364030324273277
+    },
+    {
+      "value": "ompl",
+      "prior": 0.06359696757267229
+    }
+  ],
+  "('ComputePathToPose#1', 'ComputePathToPose', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.01136027259885911
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 1.018939566592693e-09
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.029580341456979027
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 1.018939566592693e-09
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 8.620761454774977e-06
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 5.747174303183287e-06
+    },
+    {
+      "value": "PTP",
+      "prior": 0.9402248006391498
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.01847466368479059
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.00033980345334134115
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 1.018939566592693e-09
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 2.8735871515916436e-06
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 2.8735871515916436e-06
+    }
+  ],
+  "('YaskawaGripperCommand#2', 'YaskawaGripperCommand', 'position')": [
+    {
+      "value": "0.0",
+      "prior": 1e-09
+    },
+    {
+      "value": "0.235",
+      "prior": 0.999999999
+    }
+  ],
+  "('ComputePathToState#2', 'ComputePathToState', 'named_state')": [
+    {
+      "value": "gp7_detect",
+      "prior": 0.27272727272727276
+    },
+    {
+      "value": "gp7_home",
+      "prior": 0.09090909090909093
+    },
+    {
+      "value": "gp7_detect_arucomarker",
+      "prior": 0.6363636363636364
+    }
+  ],
+  "('ComputePathToState#2', 'ComputePathToState', 'planning_pipeline')": [
+    {
+      "value": "pilz_industrial_motion_planner",
+      "prior": 0.7852641129467665
+    },
+    {
+      "value": "ompl",
+      "prior": 0.21473588705323346
+    }
+  ],
+  "('ComputePathToState#2', 'ComputePathToState', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.0007957830533753511
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 0.0016620699976663883
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.0003989707205548703
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 0.006458738487903767
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 0.0005756831477816251
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.0010114706517831047
+    },
+    {
+      "value": "PTP",
+      "prior": 0.78015706962306
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.004581437062921867
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.18967426448560254
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 0.00912945794841939
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 0.003241318667578324
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 0.002313736153352779
+    }
+  ],
+  "('SetPathConstraints#2', 'SetPathConstraints', 'joint_constraints')": [
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0",
+      "prior": 0.015724300557996278
+    },
+    {
+      "value": "joint_3_s,0.0,0.1,0.1,1.0",
+      "prior": 0.0004787724491334166
+    },
+    {
+      "value": "joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.06819168853477767
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0",
+      "prior": 0.10312548487717087
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.029767233938635045
+    },
+    {
+      "value": "joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.04348292190089064
+    },
+    {
+      "value": "joint_3_s,0.0,0.1,0.1,1.0;joint_6_s,0.0,0.1,0.1,1.0",
+      "prior": 0.0004457253271471016
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_3_s,0.0,0.1,0.1,1.0;joint_5_s,0.0,0.1,0.1,1.0",
+      "prior": 0.7387838724142489
+    }
+  ],
+  "('ComputePathToPose#2', 'ComputePathToPose', 'planning_pipeline')": [
+    {
+      "value": "pilz_industrial_motion_planner",
+      "prior": 0.9021718984505459
+    },
+    {
+      "value": "ompl",
+      "prior": 0.09782810154945398
+    }
+  ],
+  "('ComputePathToPose#2', 'ComputePathToPose', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.005311071884386198
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 1.3393218242852252e-05
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.0004860611089880151
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 2.6302829106513232e-05
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 1.7938337411532337e-07
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.004937534408174708
+    },
+    {
+      "value": "PTP",
+      "prior": 0.9098595914087473
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.07929327980902298
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 1.6912065265227023e-05
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 3.758192830556863e-05
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 8.952066670056726e-06
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 9.139889716222881e-06
+    }
+  ],
+  "('YaskawaGripperCommand#3', 'YaskawaGripperCommand', 'position')": [
+    {
+      "value": "0.0",
+      "prior": 0.999999999
+    },
+    {
+      "value": "0.235",
+      "prior": 1e-09
+    }
+  ]
+}
