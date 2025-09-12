@@ -1,0 +1,362 @@
+{
+  "('ComputePathToState#1', 'ComputePathToState', 'named_state')": [
+    {
+      "value": "gp7_detect",
+      "prior": 0.15037593984962408
+    },
+    {
+      "value": "gp7_home",
+      "prior": 0.09774436090225565
+    },
+    {
+      "value": "gp7_detect_arucomarker",
+      "prior": 0.7518796992481203
+    }
+  ],
+  "('ComputePathToState#1', 'ComputePathToState', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.13533834586466165
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 0.06766917293233082
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.12030075187969924
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 0.07518796992481203
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 0.06766917293233082
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.06766917293233082
+    },
+    {
+      "value": "PTP",
+      "prior": 0.06766917293233082
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.10526315789473684
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.09022556390977443
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 0.06766917293233082
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 0.06766917293233082
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 0.06766917293233082
+    }
+  ],
+  "('YaskawaGripperCommand#1', 'YaskawaGripperCommand', 'position')": [
+    {
+      "value": "0.0",
+      "prior": 0.9090909090909091
+    },
+    {
+      "value": "0.235",
+      "prior": 0.09090909090909091
+    }
+  ],
+  "('UpdatePose#1', 'UpdatePose', 'update_relative_pose')": [
+    {
+      "value": "0.0;0.0;0.11;0.0;0.0;0.0;0.0",
+      "prior": 0.22535211267605637
+    },
+    {
+      "value": "0.0;0.0;0.115;0.0;0.0;0.0;0.0",
+      "prior": 0.25352112676056343
+    },
+    {
+      "value": "0.0;0.0;0.15;0.0;0.0;0.0;0.0",
+      "prior": 0.11267605633802819
+    },
+    {
+      "value": "0.0;0.0;0.105;0.0;0.0;0.0;0.0",
+      "prior": 0.14084507042253522
+    },
+    {
+      "value": "0.0;0.0;0.09;0.0;0.0;0.0;0.0",
+      "prior": 0.09859154929577466
+    },
+    {
+      "value": "0.0;0.0;0.10;0.0;0.0;0.0;0.0",
+      "prior": 0.16901408450704225
+    }
+  ],
+  "('SetPathConstraints#1', 'SetPathConstraints', 'joint_constraints')": [
+    {
+      "value": "joint_1_s,0.0,999,999,0.0",
+      "prior": 0.06250000000000001
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0",
+      "prior": 0.06250000000000001
+    },
+    {
+      "value": "joint_2_l,30.0,0.1,0.1,1.0",
+      "prior": 0.0892857142857143
+    },
+    {
+      "value": "joint_3,40.0,0.1,0.1,1.0",
+      "prior": 0.06250000000000001
+    },
+    {
+      "value": "joint_4,0.0,0.1,0.1,1.0",
+      "prior": 0.06250000000000001
+    },
+    {
+      "value": "joint_5,-50.0,0.1,0.1,1.0",
+      "prior": 0.06250000000000001
+    },
+    {
+      "value": "joint_6,120.0,0.1,0.1,0.8",
+      "prior": 0.06250000000000001
+    },
+    {
+      "value": "joint_4,0.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8",
+      "prior": 0.22321428571428573
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_3,40.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8",
+      "prior": 0.3125
+    }
+  ],
+  "('ComputePathToPose#1', 'ComputePathToPose', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "PTP",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.13008130081300814
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.0975609756097561
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 0.11382113821138211
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 0.07317073170731707
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 0.07317073170731707
+    }
+  ],
+  "('YaskawaGripperCommand#2', 'YaskawaGripperCommand', 'position')": [
+    {
+      "value": "0.0",
+      "prior": 0.09090909090909091
+    },
+    {
+      "value": "0.235",
+      "prior": 0.9090909090909091
+    }
+  ],
+  "('ComputePathToState#2', 'ComputePathToState', 'named_state')": [
+    {
+      "value": "gp7_detect",
+      "prior": 0.27027027027027034
+    },
+    {
+      "value": "gp7_home",
+      "prior": 0.09909909909909913
+    },
+    {
+      "value": "gp7_detect_arucomarker",
+      "prior": 0.6306306306306306
+    }
+  ],
+  "('ComputePathToState#2', 'ComputePathToState', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.0974025974025974
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.08116883116883117
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "PTP",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.1461038961038961
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.12987012987012986
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 0.06818181818181816
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 0.06818181818181816
+    }
+  ],
+  "('SetPathConstraints#2', 'SetPathConstraints', 'joint_constraints')": [
+    {
+      "value": "joint_1_s,0.0,999,999,0.0",
+      "prior": 0.06488549618320612
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0",
+      "prior": 0.06488549618320612
+    },
+    {
+      "value": "joint_2_l,30.0,0.1,0.1,1.0",
+      "prior": 0.15267175572519087
+    },
+    {
+      "value": "joint_3,40.0,0.1,0.1,1.0",
+      "prior": 0.06488549618320612
+    },
+    {
+      "value": "joint_4,0.0,0.1,0.1,1.0",
+      "prior": 0.06488549618320612
+    },
+    {
+      "value": "joint_5,-50.0,0.1,0.1,1.0",
+      "prior": 0.06488549618320612
+    },
+    {
+      "value": "joint_6,120.0,0.1,0.1,0.8",
+      "prior": 0.06488549618320612
+    },
+    {
+      "value": "joint_4,0.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8",
+      "prior": 0.19083969465648856
+    },
+    {
+      "value": "joint_1_s,0.0,0.1,0.1,1.0;joint_3,40.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8",
+      "prior": 0.26717557251908397
+    }
+  ],
+  "('ComputePathToPose#2', 'ComputePathToPose', 'planner_id')": [
+    {
+      "value": "BKPIECEkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "ESTkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "KPIECEkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "LBKPIECEkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "PRMkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "PRMstarkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "PTP",
+      "prior": 0.15625
+    },
+    {
+      "value": "RRTConnectkConfigDefault",
+      "prior": 0.09375
+    },
+    {
+      "value": "RRTkConfigDefault",
+      "prior": 0.109375
+    },
+    {
+      "value": "RRTstarkConfigDefault",
+      "prior": 0.078125
+    },
+    {
+      "value": "SBLkConfigDefault",
+      "prior": 0.07031249999999999
+    },
+    {
+      "value": "TRRTkConfigDefault",
+      "prior": 0.07031249999999999
+    }
+  ],
+  "('YaskawaGripperCommand#3', 'YaskawaGripperCommand', 'position')": [
+    {
+      "value": "0.0",
+      "prior": 0.9090909090909091
+    },
+    {
+      "value": "0.235",
+      "prior": 0.09090909090909091
+    }
+  ]
+}

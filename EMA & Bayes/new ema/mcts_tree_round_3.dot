@@ -1,0 +1,353 @@
+digraph MCTS {
+  node [shape=box, style=rounded];
+  0 [label="ROOT
+N=300, Q=0.879"];
+  1 [label="ComputePathToState#1.ComputePathToState.named_state=gp7_detect_arucomarker
+N=300, Q=0.879"];
+  2 [label="ComputePathToState#1.ComputePathToState.planner_id=RRTConnectkConfigDefault
+N=288, Q=0.883"];
+  3 [label="YaskawaGripperCommand#1.YaskawaGripperCommand.position=0.0
+N=287, Q=0.882"];
+  4 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.115;0.0;0.0;0.0;0.0
+N=279, Q=0.884"];
+  5 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3,40.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=270, Q=0.892"];
+  6 [label="ComputePathToPose#1.ComputePathToPose.planner_id=PTP
+N=258, Q=0.908"];
+  7 [label="YaskawaGripperCommand#2.YaskawaGripperCommand.position=0.235
+N=257, Q=0.908"];
+  8 [label="ComputePathToState#2.ComputePathToState.named_state=gp7_detect_arucomarker
+N=256, Q=0.908"];
+  9 [label="ComputePathToState#2.ComputePathToState.planner_id=RRTkConfigDefault
+N=226, Q=0.920"];
+  10 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=151, Q=0.923"];
+  11 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=125, Q=0.938"];
+  12 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=124, Q=0.938"];
+  13 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTkConfigDefault
+N=10, Q=0.885"];
+  14 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=9, Q=0.885"];
+  15 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTConnectkConfigDefault
+N=6, Q=0.929"];
+  16 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=5, Q=0.929"];
+  17 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTstarkConfigDefault
+N=1, Q=0.823"];
+  18 [label="ComputePathToPose#2.ComputePathToPose.planner_id=KPIECEkConfigDefault
+N=1, Q=0.794"];
+  19 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PRMstarkConfigDefault
+N=1, Q=0.000"];
+  20 [label="ComputePathToPose#2.ComputePathToPose.planner_id=TRRTkConfigDefault
+N=1, Q=0.903"];
+  21 [label="ComputePathToPose#2.ComputePathToPose.planner_id=SBLkConfigDefault
+N=1, Q=0.897"];
+  22 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PRMkConfigDefault
+N=1, Q=0.850"];
+  23 [label="ComputePathToPose#2.ComputePathToPose.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.873"];
+  24 [label="ComputePathToPose#2.ComputePathToPose.planner_id=BKPIECEkConfigDefault
+N=1, Q=0.816"];
+  25 [label="ComputePathToPose#2.ComputePathToPose.planner_id=ESTkConfigDefault
+N=1, Q=0.783"];
+  26 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3,40.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=65, Q=0.915"];
+  27 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=50, Q=0.941"];
+  28 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=49, Q=0.941"];
+  29 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTkConfigDefault
+N=3, Q=0.826"];
+  30 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=2, Q=0.826"];
+  31 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTConnectkConfigDefault
+N=2, Q=0.841"];
+  32 [label="YaskawaGripperCommand#3.YaskawaGripperCommand.position=0.0
+N=1, Q=0.841"];
+  33 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTstarkConfigDefault
+N=1, Q=0.919"];
+  34 [label="ComputePathToPose#2.ComputePathToPose.planner_id=KPIECEkConfigDefault
+N=1, Q=0.901"];
+  35 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PRMstarkConfigDefault
+N=1, Q=0.761"];
+  36 [label="ComputePathToPose#2.ComputePathToPose.planner_id=TRRTkConfigDefault
+N=1, Q=0.788"];
+  37 [label="ComputePathToPose#2.ComputePathToPose.planner_id=SBLkConfigDefault
+N=1, Q=0.710"];
+  38 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PRMkConfigDefault
+N=1, Q=0.834"];
+  39 [label="ComputePathToPose#2.ComputePathToPose.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.705"];
+  40 [label="ComputePathToPose#2.ComputePathToPose.planner_id=BKPIECEkConfigDefault
+N=1, Q=0.860"];
+  41 [label="ComputePathToPose#2.ComputePathToPose.planner_id=ESTkConfigDefault
+N=1, Q=0.850"];
+  42 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_2_l,30.0,0.1,0.1,1.0
+N=3, Q=0.911"];
+  43 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=1, Q=0.943"];
+  44 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTkConfigDefault
+N=1, Q=0.846"];
+  45 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,999,999,0.0
+N=1, Q=0.942"];
+  46 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3,40.0,0.1,0.1,1.0
+N=1, Q=0.939"];
+  47 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0
+N=1, Q=0.877"];
+  48 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=1, Q=0.920"];
+  49 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_6,120.0,0.1,0.1,0.8
+N=1, Q=0.939"];
+  50 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_5,-50.0,0.1,0.1,1.0
+N=1, Q=0.923"];
+  51 [label="ComputePathToState#2.ComputePathToState.planner_id=KPIECEkConfigDefault
+N=19, Q=0.857"];
+  52 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=7, Q=0.767"];
+  53 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=1, Q=0.942"];
+  54 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTkConfigDefault
+N=1, Q=0.926"];
+  55 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTConnectkConfigDefault
+N=1, Q=0.882"];
+  56 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTstarkConfigDefault
+N=1, Q=0.811"];
+  57 [label="ComputePathToPose#2.ComputePathToPose.planner_id=KPIECEkConfigDefault
+N=1, Q=0.866"];
+  58 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PRMstarkConfigDefault
+N=1, Q=0.000"];
+  59 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3,40.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=4, Q=0.879"];
+  60 [label="ComputePathToPose#2.ComputePathToPose.planner_id=PTP
+N=1, Q=0.939"];
+  61 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTkConfigDefault
+N=1, Q=0.882"];
+  62 [label="ComputePathToPose#2.ComputePathToPose.planner_id=RRTConnectkConfigDefault
+N=1, Q=0.756"];
+  63 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_2_l,30.0,0.1,0.1,1.0
+N=1, Q=0.941"];
+  64 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,999,999,0.0
+N=1, Q=0.940"];
+  65 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_3,40.0,0.1,0.1,1.0
+N=1, Q=0.877"];
+  66 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0
+N=1, Q=0.877"];
+  67 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=1, Q=0.939"];
+  68 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_6,120.0,0.1,0.1,0.8
+N=1, Q=0.938"];
+  69 [label="SetPathConstraints#2.SetPathConstraints.joint_constraints=joint_5,-50.0,0.1,0.1,1.0
+N=1, Q=0.939"];
+  70 [label="ComputePathToState#2.ComputePathToState.planner_id=RRTstarkConfigDefault
+N=1, Q=0.879"];
+  71 [label="ComputePathToState#2.ComputePathToState.planner_id=PRMkConfigDefault
+N=1, Q=0.874"];
+  72 [label="ComputePathToState#2.ComputePathToState.planner_id=RRTConnectkConfigDefault
+N=1, Q=0.000"];
+  73 [label="ComputePathToState#2.ComputePathToState.planner_id=PTP
+N=1, Q=0.939"];
+  74 [label="ComputePathToState#2.ComputePathToState.planner_id=SBLkConfigDefault
+N=1, Q=0.941"];
+  75 [label="ComputePathToState#2.ComputePathToState.planner_id=TRRTkConfigDefault
+N=1, Q=0.942"];
+  76 [label="ComputePathToState#2.ComputePathToState.planner_id=BKPIECEkConfigDefault
+N=1, Q=0.450"];
+  77 [label="ComputePathToState#2.ComputePathToState.planner_id=ESTkConfigDefault
+N=1, Q=0.939"];
+  78 [label="ComputePathToState#2.ComputePathToState.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.940"];
+  79 [label="ComputePathToState#2.ComputePathToState.planner_id=PRMstarkConfigDefault
+N=1, Q=0.450"];
+  80 [label="ComputePathToPose#1.ComputePathToPose.planner_id=RRTConnectkConfigDefault
+N=1, Q=0.251"];
+  81 [label="ComputePathToPose#1.ComputePathToPose.planner_id=BKPIECEkConfigDefault
+N=1, Q=0.733"];
+  82 [label="ComputePathToPose#1.ComputePathToPose.planner_id=KPIECEkConfigDefault
+N=1, Q=0.249"];
+  83 [label="ComputePathToPose#1.ComputePathToPose.planner_id=RRTkConfigDefault
+N=1, Q=0.916"];
+  84 [label="ComputePathToPose#1.ComputePathToPose.planner_id=PRMkConfigDefault
+N=1, Q=0.242"];
+  85 [label="ComputePathToPose#1.ComputePathToPose.planner_id=SBLkConfigDefault
+N=1, Q=0.723"];
+  86 [label="ComputePathToPose#1.ComputePathToPose.planner_id=ESTkConfigDefault
+N=1, Q=0.691"];
+  87 [label="ComputePathToPose#1.ComputePathToPose.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.251"];
+  88 [label="ComputePathToPose#1.ComputePathToPose.planner_id=PRMstarkConfigDefault
+N=1, Q=0.674"];
+  89 [label="ComputePathToPose#1.ComputePathToPose.planner_id=RRTstarkConfigDefault
+N=1, Q=0.713"];
+  90 [label="ComputePathToPose#1.ComputePathToPose.planner_id=TRRTkConfigDefault
+N=1, Q=0.252"];
+  91 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=1, Q=0.250"];
+  92 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,999,999,0.0
+N=1, Q=0.450"];
+  93 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_2_l,30.0,0.1,0.1,1.0
+N=1, Q=0.943"];
+  94 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_5,-50.0,0.1,0.1,1.0
+N=1, Q=0.864"];
+  95 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_6,120.0,0.1,0.1,0.8
+N=1, Q=0.389"];
+  96 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0
+N=1, Q=0.939"];
+  97 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0
+N=1, Q=0.679"];
+  98 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_3,40.0,0.1,0.1,1.0
+N=1, Q=0.451"];
+  99 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.10;0.0;0.0;0.0;0.0
+N=3, Q=0.930"];
+  100 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_1_s,0.0,0.1,0.1,1.0;joint_3,40.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=1, Q=0.937"];
+  101 [label="SetPathConstraints#1.SetPathConstraints.joint_constraints=joint_4,0.0,0.1,0.1,1.0;joint_6,120.0,0.1,0.1,0.8
+N=1, Q=0.917"];
+  102 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.09;0.0;0.0;0.0;0.0
+N=1, Q=0.933"];
+  103 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.105;0.0;0.0;0.0;0.0
+N=1, Q=0.896"];
+  104 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.11;0.0;0.0;0.0;0.0
+N=1, Q=0.912"];
+  105 [label="UpdatePose#1.UpdatePose.update_relative_pose=0.0;0.0;0.15;0.0;0.0;0.0;0.0
+N=1, Q=0.200"];
+  106 [label="ComputePathToState#1.ComputePathToState.planner_id=BKPIECEkConfigDefault
+N=1, Q=0.451"];
+  107 [label="ComputePathToState#1.ComputePathToState.planner_id=KPIECEkConfigDefault
+N=1, Q=0.924"];
+  108 [label="ComputePathToState#1.ComputePathToState.planner_id=RRTstarkConfigDefault
+N=1, Q=0.940"];
+  109 [label="ComputePathToState#1.ComputePathToState.planner_id=LBKPIECEkConfigDefault
+N=1, Q=0.825"];
+  110 [label="ComputePathToState#1.ComputePathToState.planner_id=PRMstarkConfigDefault
+N=1, Q=0.878"];
+  111 [label="ComputePathToState#1.ComputePathToState.planner_id=TRRTkConfigDefault
+N=1, Q=0.938"];
+  112 [label="ComputePathToState#1.ComputePathToState.planner_id=RRTkConfigDefault
+N=1, Q=0.867"];
+  113 [label="ComputePathToState#1.ComputePathToState.planner_id=PTP
+N=1, Q=0.877"];
+  114 [label="ComputePathToState#1.ComputePathToState.planner_id=PRMkConfigDefault
+N=1, Q=0.940"];
+  115 [label="ComputePathToState#1.ComputePathToState.planner_id=SBLkConfigDefault
+N=1, Q=0.782"];
+  116 [label="ComputePathToState#1.ComputePathToState.planner_id=ESTkConfigDefault
+N=1, Q=0.810"];
+  0 -> 1;
+  1 -> 2;
+  2 -> 3;
+  3 -> 4;
+  4 -> 5;
+  5 -> 6;
+  6 -> 7;
+  7 -> 8;
+  8 -> 9;
+  9 -> 10;
+  10 -> 11;
+  11 -> 12;
+  10 -> 13;
+  13 -> 14;
+  10 -> 15;
+  15 -> 16;
+  10 -> 17;
+  10 -> 18;
+  10 -> 19;
+  10 -> 20;
+  10 -> 21;
+  10 -> 22;
+  10 -> 23;
+  10 -> 24;
+  10 -> 25;
+  9 -> 26;
+  26 -> 27;
+  27 -> 28;
+  26 -> 29;
+  29 -> 30;
+  26 -> 31;
+  31 -> 32;
+  26 -> 33;
+  26 -> 34;
+  26 -> 35;
+  26 -> 36;
+  26 -> 37;
+  26 -> 38;
+  26 -> 39;
+  26 -> 40;
+  26 -> 41;
+  9 -> 42;
+  42 -> 43;
+  42 -> 44;
+  9 -> 45;
+  9 -> 46;
+  9 -> 47;
+  9 -> 48;
+  9 -> 49;
+  9 -> 50;
+  8 -> 51;
+  51 -> 52;
+  52 -> 53;
+  52 -> 54;
+  52 -> 55;
+  52 -> 56;
+  52 -> 57;
+  52 -> 58;
+  51 -> 59;
+  59 -> 60;
+  59 -> 61;
+  59 -> 62;
+  51 -> 63;
+  51 -> 64;
+  51 -> 65;
+  51 -> 66;
+  51 -> 67;
+  51 -> 68;
+  51 -> 69;
+  8 -> 70;
+  8 -> 71;
+  8 -> 72;
+  8 -> 73;
+  8 -> 74;
+  8 -> 75;
+  8 -> 76;
+  8 -> 77;
+  8 -> 78;
+  8 -> 79;
+  5 -> 80;
+  5 -> 81;
+  5 -> 82;
+  5 -> 83;
+  5 -> 84;
+  5 -> 85;
+  5 -> 86;
+  5 -> 87;
+  5 -> 88;
+  5 -> 89;
+  5 -> 90;
+  4 -> 91;
+  4 -> 92;
+  4 -> 93;
+  4 -> 94;
+  4 -> 95;
+  4 -> 96;
+  4 -> 97;
+  4 -> 98;
+  3 -> 99;
+  99 -> 100;
+  99 -> 101;
+  3 -> 102;
+  3 -> 103;
+  3 -> 104;
+  3 -> 105;
+  1 -> 106;
+  1 -> 107;
+  1 -> 108;
+  1 -> 109;
+  1 -> 110;
+  1 -> 111;
+  1 -> 112;
+  1 -> 113;
+  1 -> 114;
+  1 -> 115;
+  1 -> 116;
+}
